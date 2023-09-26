@@ -34,13 +34,8 @@ public class Room {
     void enter(Player p) {
         p.setLoc(this); // i think this maybe works??
         if (beenEntered == false) {
-            System.out.println(desc);
             beenEntered = true;
         }
-    }
-
-    void exit(int side, Player p) {
-
     }
 
     public boolean hasLeatherface(Leatherface leatherface) {
