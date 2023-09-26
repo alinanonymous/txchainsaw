@@ -7,6 +7,13 @@ public class Player {
         position = room;
     }
 
-    
+    private void take(Player player) {
+        Item[] itemArray = new Item[player.position.roomItems.size()];
+        itemArray = player.position.roomItems.toArray(itemArray);
+
+        do {
+            
+        } while(true);
+    }
 
 }

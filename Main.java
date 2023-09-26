@@ -3,6 +3,9 @@ import java.util.*;
 //https://www.cs.colostate.edu/~bieman/CS314/DesignStudios/DS1/AdventureCode.pdf
 
 class Main {
+
+    public Scanner input = new Scanner(System.in);
+
     public static void type(String text, int speed) {
         int i;
 
@@ -34,7 +37,6 @@ class Main {
         "documented as yet another story of the bizarre crimes that were part of:\n\n",
                 25);
         type("\t\tThe Texas Chain Saw Massacre.\n", 50);
-        Scanner input = new Scanner(System.in);
         while (true) {
             // print context for current decision
 

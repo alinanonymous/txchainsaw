@@ -2,10 +2,10 @@ import java.util.*;
 
 public class Room {
 
-    private String desc;
-    private String desc2;
-    private boolean beenEntered = false;
-    private ArrayList<Item> roomItems = new ArrayList<Item>();
+    public String desc;
+    public String desc2;
+    public boolean beenEntered = false;
+    public ArrayList<Item> roomItems = new ArrayList<Item>();
 
     public void setDesc(String description) {
         description = desc;
