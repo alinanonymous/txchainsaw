@@ -17,13 +17,23 @@ public class Player {
                 inventory[itemCount] = item;
                 position.roomItems.remove(item);
                 itemCount++;
+                Main.type("Took " + item.name + ".", 10);
             } else {
                 Main.type("Inventory full.\n", 10);
             }
         } else {
             Main.type("That item is not in this room.\n", 10);
         }
+    }
 
-        Main.type("Took " + item.name + ".", 10);
+    public void useItem(Item item) {
+
+        for (int i = 0; i < itemCount; i++) {
+            if (item == inventory[i]) {
+                item.use(item.name);
+            } else {
+                Main.type("You don't have that item.", 10);
+            }
+        }
     }
 }

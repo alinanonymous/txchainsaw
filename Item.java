@@ -19,4 +19,16 @@ public class Item {
     return use;
   }
 
+  public void use(String item) {
+    switch(item) {
+      case("health"): 
+      if (Player.health <= 100) {
+        Main.type(getUse(), 10);
+        Player.health += 15;
+      } else {
+        Main.type("Health is full", 10);
+      }
+    }
+  }
+
 }
