@@ -1,7 +1,7 @@
 public class Item {
-
-  private String desc;
-  private String use;
+  public String name;
+  public String desc;
+  public String use;
 
   public void setDesc(String description) {
     desc = description;

@@ -4,5 +4,5 @@ public class Leatherface {
   public void setLeatherfaceLoc(Room room) {
     leatherfacePos = room;
   }
-  
+
 }
