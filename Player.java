@@ -10,15 +10,13 @@ public class Player {
         position = room;
     }
 
-    public void take(Player player, Item item) {
-        ArrayList<Item> itemArray = new ArrayList<Item>();
-        itemArray = player.position.roomItems;
-        List<Item> invlist = Arrays.asList(inventory);
-        if (itemArray.contains(item)) {
-            if (player.itemCount < 2) {
-                itemArray.remove(item);
-                invlist.add(item);
-                player.itemCount++;
+    public void take(Item item) {
+        
+        if (position.roomItems.contains(item)) {
+            if (itemCount < 2) {
+                inventory[itemCount] = item;
+                position.roomItems.remove(item);
+                itemCount++;
             } else {
                 Main.type("Inventory full.\n", 10);
             }
@@ -26,7 +24,6 @@ public class Player {
             Main.type("That item is not in this room.\n", 10);
         }
 
-        player.inventory = invlist.toArray(inventory);
         Main.type("Took " + item.name + ".", 10);
     }
 }
