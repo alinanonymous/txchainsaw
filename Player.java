@@ -31,6 +31,7 @@ public class Player {
         for (int i = 0; i < itemCount; i++) {
             if (item == inventory[i]) {
                 item.use(item.name);
+                break;
             } else {
                 Main.type("You don't have that item.", 10);
             }
