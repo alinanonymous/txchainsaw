@@ -15,14 +15,6 @@ public class Room {
         description = desc2;
     }
 
-    public String getDesc() {
-        return desc;
-    }
-
-    public String getDesc2() {
-        return desc2;
-    }
-
     public void addItem(Item item) {
         roomItems.add(item);
     }
