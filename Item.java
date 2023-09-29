@@ -31,7 +31,7 @@ public class Item {
       }
 
       case("bone"):
-      if (Player.position == 4) {
+      if (Player.position == Leatherface.leatherfacePos) {
 
       }
     }

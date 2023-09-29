@@ -1,7 +1,5 @@
 import java.util.*;
 
-//https://www.cs.colostate.edu/~bieman/CS314/DesignStudios/DS1/AdventureCode.pdf
-
 class Main {
 
     public Scanner input = new Scanner(System.in);

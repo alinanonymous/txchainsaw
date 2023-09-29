@@ -38,9 +38,9 @@ public class Room {
         }
     }
 
-    public boolean hasLeatherface(Leatherface leatherface) {
+    public boolean hasLeatherface() {
         boolean hasLeatherface;
-        if (leatherface.leatherfacePos.equals(this)) { // this better work
+        if (Leatherface.leatherfacePos.equals(this)) { // this better work
             hasLeatherface = true;
         } else {
             hasLeatherface = false;
