@@ -1,11 +1,11 @@
 public class Enum {
-    public enum direction {
+    public enum Direction {
 
         NORTH(1), EAST(2), SOUTH(3), WEST(4);
 
-        private final int direct;
+        public final int direct;
 
-        direction(int direct) {
+        Direction(int direct) {
             this.direct = direct;
         }
     }

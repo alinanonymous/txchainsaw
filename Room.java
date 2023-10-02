@@ -6,6 +6,7 @@ public class Room {
     public String desc2;
     public boolean beenEntered = false;
     public ArrayList<Item> roomItems = new ArrayList<Item>();
+    public Room[] side = new Room[4];
 
     public void setDesc(String description) {
         description = desc;
@@ -13,6 +14,11 @@ public class Room {
 
     public void setDesc2(String description) {
         description = desc2;
+    }
+
+    public void setSide(Enum.Direction direction, Room room) {
+        int direct = direction.direct;
+        side[direct] = room;
     }
 
     public void addItem(Item item) {
@@ -23,11 +29,16 @@ public class Room {
         roomItems.remove(item);
     }
 
-    void enter(Player p) {
+    public void enter(Player p) {
         p.setLoc(this); // i think this maybe works??
         if (beenEntered == false) {
             beenEntered = true;
         }
+    }
+
+    public void exit(Enum.Direction direction, Player p) {
+        int direct = direction.direct;
+        side[direct].enter(p);
     }
 
     public boolean hasLeatherface() {
