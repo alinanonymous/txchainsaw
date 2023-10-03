@@ -35,7 +35,45 @@ class Main {
         
         while (true) {
             // print context for current decision
-
+            type("What would you like to do?\n\n", 10);
+            String userIn = input.nextLine();
+            String[] split = userIn.split(" ", 2);
+            switch(split[0].toLowerCase()) {
+                case("n"):
+                case("north"):
+                    type("Moving North.", 10);
+                break;
+                case("e"):
+                case("east"):
+                    type("Moving East.", 10);
+                break;
+                case("s"):
+                case("south"):
+                    type("Moving South.", 10);
+                break;
+                case("w"):
+                case("west"):
+                    type("Moving West.", 10);
+                break;
+                case("use"):
+                    switch(split[1].toLowerCase()) {
+                        case("bone"):
+                            type("Using bone.", 10);
+                        break;
+                        case("bandage"):
+                        case("health"):
+                            type("Using health.", 10);
+                        break;
+                        default:
+                            type("Not an item.", 10);
+                        break;
+                    }
+                break;
+            }
+            
+            // switch(userIn.toLowerCase()) {
+            //     case(""):
+            // }
             // print list of options for current decision
 
             // read user input
@@ -59,7 +97,7 @@ class Main {
                     break;
                     case("y"):
                     case("yes"):
-                        type("ok", 1);
+                        type(Content.instructions, 10);
                         choice = "normal";
                     break;
                     case("n"):
