@@ -29,15 +29,7 @@ class Main {
         Room r1 = new Room();
         spawn.setSide(Enum.Direction.NORTH, r1);
         System.out.println("\u001b[2J");
-        type("\u001b[HIt is Autumn of 1972. \n" +
-                "Tragedy strikes 19 year old Rose Taylor on a drive home with her boyfriend,\n" +
-                "22 year old Johnny Sawyer. After being abandoned at a gas station by her \n" +
-                "false lover, a relaxing night on the town would become a nightmare that was\n" +
-                "all too real.\n\tThe worst things she could have imagined do not compare to the horrors\n" +
-                "she would experience during the events of this night and the subsequent days.\n" +
-                "The case of Rose Taylor's misfortunate suffering and anguish would be\n" +
-                "documented as yet another story of the bizarre crimes that were part of:\n\n",
-                1);
+        type(Content.introduction, 1);
         type("\t\tThe Texas Chain Saw Massacre.\n", 1);
         displayInstructions();
         
