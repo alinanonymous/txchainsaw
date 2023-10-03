@@ -30,11 +30,16 @@ public class Player {
         }
     }
 
+    public void go(Enum.Direction direction) {
+        position.exit(direction, this);
+    }
+
     public void useItem(Item item) {
 
         for (int i = 0; i < itemCount; i++) {
             if (item == inventory[i]) {
                 item.use(item.name);
+                itemCount--;
                 break;
             } else {
                 Main.type("You don't have that item.", 10);

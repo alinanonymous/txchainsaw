@@ -1,8 +1,8 @@
 import java.util.*;
 
 class Main {
-
-    public Scanner input = new Scanner(System.in);
+    public static String choice;
+    public static Scanner input = new Scanner(System.in);
 
     public static void type(String text, int speed) {
         int i;
@@ -37,8 +37,10 @@ class Main {
                 "she would experience during the events of this night and the subsequent days.\n" +
                 "The case of Rose Taylor's misfortunate suffering and anguish would be\n" +
                 "documented as yet another story of the bizarre crimes that were part of:\n\n",
-                25);
-        type("\t\tThe Texas Chain Saw Massacre.\n", 50);
+                1);
+        type("\t\tThe Texas Chain Saw Massacre.\n", 1);
+        displayInstructions();
+        
         while (true) {
             // print context for current decision
 
@@ -48,6 +50,34 @@ class Main {
 
             // update decision state for next iteration
 
+        }
+    }
+
+    private static void displayInstructions() {
+        choice = "instructions";
+        while (choice == "instructions") {
+            
+            type("\nWelcome. Would you like instructions? y/n\n", 10);
+            String userIn = input.next();
+
+            try {
+                switch (userIn.toLowerCase()) {
+                    default:
+                        type("Invalid input.\n", 10);
+                    break;
+                    case("y"):
+                    case("yes"):
+                        type("ok", 1);
+                        choice = "normal";
+                    break;
+                    case("n"):
+                    case("no"):
+                        choice = "normal";
+                    break;
+                }
+            } catch (Exception e) {
+                type("Invalid input.\n", 10);
+            }
         }
     }
 }

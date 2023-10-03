@@ -32,6 +32,7 @@ public class Room {
     public void enter(Player p) {
         p.setLoc(this); // i think this maybe works??
         if (beenEntered == false) {
+            Main.type(desc, 25);
             beenEntered = true;
         }
     }
