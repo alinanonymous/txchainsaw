@@ -29,8 +29,8 @@ class Main {
         Room r1 = new Room();
         spawn.setSide(Enum.Direction.NORTH, r1);
         System.out.println("\u001b[2J");
-        type(Content.introduction, 1);
-        type("\t\tThe Texas Chain Saw Massacre.\n", 1);
+        type(Content.instructions, 25);
+        type("\t\tThe Texas Chain Saw Massacre.\n", 50);
         displayInstructions();
         
         while (true) {
@@ -41,31 +41,31 @@ class Main {
             switch(split[0].toLowerCase()) {
                 case("n"):
                 case("north"):
-                    type("Moving North.", 10);
+                    type("Moving North.\n\n", 10);
                 break;
                 case("e"):
                 case("east"):
-                    type("Moving East.", 10);
+                    type("Moving East.\n\n", 10);
                 break;
                 case("s"):
                 case("south"):
-                    type("Moving South.", 10);
+                    type("Moving South.\n\n", 10);
                 break;
                 case("w"):
                 case("west"):
-                    type("Moving West.", 10);
+                    type("Moving West.\n\n", 10);
                 break;
                 case("use"):
                     switch(split[1].toLowerCase()) {
                         case("bone"):
-                            type("Using bone.", 10);
+                            type("Using bone.\n\n", 10);
                         break;
                         case("bandage"):
                         case("health"):
-                            type("Using health.", 10);
+                            type("Using health.\n\n", 10);
                         break;
                         default:
-                            type("Not an item.", 10);
+                            type("Not an item.\n\n", 10);
                         break;
                     }
                 break;
