@@ -38,7 +38,7 @@ public class Player {
 
         for (int i = 0; i < itemCount; i++) {
             if (item == inventory[i]) {
-                item.use(item.name);
+                item.use(item);
                 itemCount--;
                 break;
             } else {

@@ -19,8 +19,8 @@ public class Item {
     return use;
   }
 
-  public void use(String item) {
-    switch(item) {
+  public void use(Item item) {
+    switch(item.name) {
       
       case("health"): 
       if (Player.health <= 100) {
@@ -33,10 +33,7 @@ public class Item {
       case("bone"):
       if (Player.position == Leatherface.leatherfacePos) {
         Leatherface.isStunned = true;
-        Main.type("\u001b[38;5;196mWith the sharp stinging noise of pierced flesh, the bone shard plunges into\n" +
-        "his neck.\u001b[0m The man shrieks. It is a horrible and inhuman wail, as if an\n" +
-        "otherworldly beast is attempting to express an emotion incomprehensible\n" +
-        "to the human mind.", 10);
+        Main.type(Content.leatherfaceStun, 10);
       }
     }
   }
