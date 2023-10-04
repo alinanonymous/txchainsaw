@@ -29,8 +29,8 @@ class Main {
         Room r1 = new Room();
         spawn.setSide(Enum.Direction.NORTH, r1);
         System.out.println("\u001b[2J");
-        type(Content.introduction, 1);
-        type("\t\tThe Texas Chain Saw Massacre.\n", 1);
+        type(Content.instructions, 25);
+        type("\t\tThe Texas Chain Saw Massacre.\n", 50);
         displayInstructions();
         
         while (true) {
