@@ -41,6 +41,31 @@ public class Content {
         health by 25. Beware, however, that if you don't apply a bandage within
         5 minutes, you will die.
             """;
+    public static String start = """
+        Your eyes pry themselves open to nothing. You are enveloped in blackness
+        on all sides. The only thing your senses can discern is an overwhelming
+        potpourri of meat and death. Death is not a smell you're familiar with,
+        but your instincts scream to you that the thick, unwelcoming atmosphere
+        and earthly smell of blood is an omen for your own future.
+        
+        As your pupils dilate and your body reveals itself, you become conscious 
+        that your own blood is slowly dripping onto the concrete surface above
+        your head. Your body fights your commands, involuntarily struggling
+        and flailing like a mindless hooked fish. The aching limbs that you
+        are now aware of clutch violently at the ropes suspending you upside-down
+        from the ceiling in a desperate attempt to survive.
+        
+        Your broken body lands on the cold floor with a thud. 
+        The impact restores your senses.
+        
+        There is a door to your north and a small corridor to the south.
+            """;
+    public static String start2 = """
+        You're in the room that you awoke in.
+        It is still just as dark.
+
+        There is a door to your north and a small corridor to the south.
+            """;
     public static String leatherfaceStun = """
         \u001b[38;5;196mWith the sharp stinging noise of pierced flesh, the bone shard plunges into
         his neck.\u001b[0m The man shrieks. It is a horrible and inhuman wail, as if an

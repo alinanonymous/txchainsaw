@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Main {
-    public static String choice;
+    public static String context;
     public static Scanner input = new Scanner(System.in);
 
     public static void type(String text, int speed) {
@@ -76,8 +76,8 @@ class Main {
     }
 
     private static void displayInstructions() {
-        choice = "instructions";
-        while (choice == "instructions") {
+        context = "instructions";
+        while (context == "instructions") {
             
             type("\nWelcome. Would you like instructions? y/n\n", 10);
             String userIn = input.next();
@@ -90,11 +90,11 @@ class Main {
                     case("y"):
                     case("yes"):
                         type(Content.instructions, 10);
-                        choice = "normal";
+                        context = "normal";
                     break;
                     case("n"):
                     case("no"):
-                        choice = "normal";
+                        context = "normal";
                     break;
                 }
             } catch (Exception e) {
