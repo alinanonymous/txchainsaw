@@ -6,6 +6,7 @@ public class Room {
     public String desc2;
     public boolean beenEntered = false;
     public ArrayList<Item> roomItems = new ArrayList<Item>();
+    public ArrayList<String> roomThings = new ArrayList<String>();
     public Room[] side = new Room[4];
 
     public void setDesc(String description) {

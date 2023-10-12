@@ -19,7 +19,7 @@ public class Content {
 
 
         The house is made of an almost labyrinthine series of rooms. 
-        You may type the following commands to move:
+        You may type \u001b[38;5;196mgo\u001b[0m, then the following directions to move:
         
         \u001b[38;5;196mn\u001b[0m or \u001b[38;5;196mnorth\u001b[0m to move north
         \u001b[38;5;196ms\u001b[0m or \u001b[38;5;196msouth\u001b[0m to move south
