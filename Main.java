@@ -47,7 +47,6 @@ class Main {
                 break;
                 case "take":
                 
-
             }
             
             // print list of options for current decision

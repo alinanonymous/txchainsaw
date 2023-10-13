@@ -26,6 +26,9 @@ public class Item {
       if (Player.health <= 100) {
         Main.type(getUse(), 10);
         Player.health += 15;
+        if (Player.health > 100) {
+          Player.health = 100;
+        }
       } else {
         Main.type("Health is full.", 10);
       }

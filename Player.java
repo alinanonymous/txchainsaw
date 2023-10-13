@@ -3,8 +3,8 @@ import java.util.*;
 public class Player {
     public static int health = 100;
     public static Room position;
-    private Item[] inventory = new Item[2];
-    private int itemCount = 0;
+    public Item[] inventory = new Item[2];
+    public int itemCount = 0;
 
     public void setLoc(Room room) {
         position = room;
@@ -31,7 +31,11 @@ public class Player {
     }
 
     public void go(Enum.Direction direction) {
-        position.exit(direction, this);
+        if (position.side[direction.direct] == null) {
+            Main.type("\nYou cannot move that way!\n", 10);
+        } else {
+            position.exit(direction, this);
+        }
     }
 
     public void useItem(Item item) {
