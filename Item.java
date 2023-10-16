@@ -41,4 +41,10 @@ public class Item {
     }
   }
 
+  Item(String Name, String Desc, String Use) {
+    name = Name;
+    desc = Desc;
+    use = Use;
+  }
+
 }

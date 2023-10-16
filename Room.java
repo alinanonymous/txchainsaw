@@ -10,11 +10,11 @@ public class Room {
     public Room[] side = new Room[4];
 
     public void setDesc(String description) {
-        description = desc;
+        desc = description;
     }
 
     public void setDesc2(String description) {
-        description = desc2;
+        desc2 = description;
     }
 
     public void setSide(Enum.Direction direction, Room room) {
@@ -35,6 +35,8 @@ public class Room {
         if (beenEntered == false) {
             Main.type(desc, 25);
             beenEntered = true;
+        } else {
+            Main.type(desc2, 10);
         }
     }
 

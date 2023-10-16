@@ -24,13 +24,20 @@ class Main {
     }
 
     public static void main(String[] args) {
-        
+        Item health = new Item("health", "test", "test2");
+        Item bone = new Item("bone", "test", "test2");
         Room spawn = new Room();
+        spawn.setDesc(Content.start);
+        spawn.setDesc2(Content.start2);
         Room r1 = new Room();
-        r1.desc = "\n\ntest";
-        spawn.setSide(Enum.Direction.NORTH, r1);
-        Rose.position = spawn;
+        r1.setDesc("test\n");
+        r1.setDesc2("test2\n");
 
+        spawn.addItem(health);
+        spawn.setSide(Enum.Direction.NORTH, r1);
+        r1.setSide(Enum.Direction.SOUTH, spawn);
+        Rose.position = spawn;
+        
         System.out.println("\u001b[2J");
         type(Content.introduction, 1);
         type("\t\tThe Texas Chain Saw Massacre.\n", 50);
@@ -46,7 +53,40 @@ class Main {
                 move(choice);
                 break;
                 case "take":
-                
+                switch (choice[1]) {
+                    case "bone":
+                    case "shard":
+                    Rose.take(bone);
+                    break;
+
+                    case "health":
+                    case "bandage":
+                    Rose.take(health);
+                    break;
+
+                    case "key":
+
+                    break;
+                }
+                break;
+                case "item":
+                switch (choice[1]) {
+                    case "bone":
+                    case "shard":
+                    Rose.useItem(bone);
+                    break;
+
+                    case "health":
+                    case "bandage":
+                    Rose.useItem(health);
+                    break;
+
+                    case "key":
+
+                    break;
+                    
+                }
+                break;
             }
             
             // print list of options for current decision
@@ -62,22 +102,22 @@ class Main {
         switch(choice[1].toLowerCase()) {
             case("n"):
             case("north"):
-                type("Moving North.", 10);
+                type("Moving North.\n\n", 10);
                 Rose.go(Enum.Direction.NORTH);
             break;
             case("e"):
             case("east"):
-                type("Moving East.", 10);
+                type("Moving East.\n\n", 10);
                 Rose.go(Enum.Direction.EAST);
             break;
             case("s"):
             case("south"):
-                type("Moving South.", 10);
+                type("Moving South.\n\n", 10);
                 Rose.go(Enum.Direction.SOUTH);
             break;
             case("w"):
             case("west"):
-                type("Moving West.", 10);
+                type("Moving West.\n\n", 10);
                 Rose.go(Enum.Direction.WEST);
             break;
         }
