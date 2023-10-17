@@ -61,7 +61,6 @@ class Main {
                         case "shard":
                             Rose.take(bone);
                             break;
-
                         case "health":
                         case "bandage":
                             Rose.take(health);
@@ -74,7 +73,6 @@ class Main {
                         case "shard":
                             Rose.useItem(bone);
                             break;
-
                         case "health":
                         case "bandage":
                             Rose.useItem(health);
