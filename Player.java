@@ -15,7 +15,7 @@ public class Player {
     }
 
     public void take(Item item) {
-        
+
         if (position.roomItems.contains(item)) {
             if (itemCount < 2) {
                 inventory[itemCount] = item;
