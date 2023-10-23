@@ -7,6 +7,7 @@ public class Room {
     public boolean beenEntered = false;
     public ArrayList<Item> roomItems = new ArrayList<Item>();
     public ArrayList<String> roomThings = new ArrayList<String>();
+    public ArrayList<String> thingDescs = new ArrayList<String>();
     public Room[] side = new Room[4];
 
     public void setDesc(String description) {
@@ -20,6 +21,16 @@ public class Room {
     public void setSide(Enum.Direction direction, Room room) {
         int direct = direction.direct;
         side[direct] = room;
+    }
+
+    public String getThingDesc(String thing) {
+        if (roomThings.contains(thing)) {
+            String thingDesc = thingDescs.get(roomThings.indexOf(thing));
+            return thingDesc;
+        } else {
+            Main.type("That isn't here.\n", 10);
+        }
+        return null;
     }
 
     public void addItem(Item item) {

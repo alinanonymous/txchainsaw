@@ -46,7 +46,7 @@ public class Content {
             on all sides. The only thing your senses can discern is an overwhelming
             potpourri of meat and death. Death is not a smell you're familiar with,
             but your instincts scream to you that the thick, unwelcoming atmosphere
-            and earthly smell of blood is an omen for your own future.
+            and earthy smell of blood is an omen for your own future.
 
             As your pupils dilate and your body reveals itself, you become conscious
             that your own blood is slowly dripping onto the concrete surface above

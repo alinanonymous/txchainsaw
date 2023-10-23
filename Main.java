@@ -30,6 +30,8 @@ class Main {
         Room spawn = new Room();
         spawn.setDesc(Content.start);
         spawn.setDesc2(Content.start2);
+        spawn.roomThings.add(0, "hat");
+        spawn.thingDescs.add(0, "It's a hat. You pick it up and place it back down.");
         Room r1 = new Room();
         r1.setDesc("test\n");
         r1.setDesc2("test2\n");
@@ -39,12 +41,14 @@ class Main {
         r1.addItem(bone);
         r1.setSide(Enum.Direction.SOUTH, spawn);
         Rose.setLoc(spawn);
-        Leatherface.setLeatherfaceLoc(r1);
-
+        spawn.beenEntered = true;
+        
         System.out.println("\u001b[2J");
         type(Content.introduction, 1);
         type("\t\tThe Texas Chain Saw Massacre.\n", 50);
         displayInstructions();
+
+        type(Content.start, 1);
 
         while (true) {
             // print context for current decision
@@ -57,6 +61,9 @@ class Main {
                     break;
                 case "take":
                     switch (choice[1]) {
+                        default:
+                            type("That item is not in this room.\n", 10);
+                            break;
                         case "bone":
                         case "shard":
                             Rose.take(bone);
@@ -78,6 +85,14 @@ class Main {
                             Rose.useItem(health);
                             break;
                     }
+                    break;
+                case "look":
+                    type(Rose.getLoc().desc2, 10);
+                    break;
+                case "exam":
+                    try {
+                        type(Rose.getLoc().getThingDesc(choice[1]), 10);
+                    } catch (Exception e) {}
                     break;
             }
 
