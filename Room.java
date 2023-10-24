@@ -33,6 +33,11 @@ public class Room {
         return null;
     }
 
+    public void addThing(String thing, String descString) {
+        roomThings.add(thing);
+        thingDescs.add(descString);
+    }
+
     public void addItem(Item item) {
         roomItems.add(item);
     }
