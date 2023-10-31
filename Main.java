@@ -6,9 +6,8 @@ class Main {
     public static Player Rose = new Player();
 
     public static void type(String text, int speed) {
-        int i;
 
-        for (i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) {
             System.out.printf("%c", text.charAt(i));
             try {
                 Thread.sleep(speed);
@@ -134,6 +133,10 @@ class Main {
         String userIn = input.nextLine();
         String[] split = userIn.split(" ", 2);
         return split;
+    }
+
+    public static long getTime() {
+        return System.currentTimeMillis();
     }
 
     private static void displayInstructions() {
