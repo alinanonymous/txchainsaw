@@ -56,9 +56,21 @@ public class Room {
         }
     }
 
+    public void enter(Leatherface l) {
+        l.setLeatherfaceLoc(this);
+    }
+
     public void exit(Enum.Direction direction, Player p) {
         int direct = direction.direct;
-        side[direct].enter(p);
+        if (side[direct] == null) {
+            
+        } else {
+            side[direct].enter(p);
+        }
+    }
+
+    public void exit(int direction, Leatherface l) {
+        side[direction].enter(l);
     }
 
     public boolean hasLeatherface() {
