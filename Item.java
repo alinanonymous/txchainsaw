@@ -32,14 +32,15 @@ public class Item {
                 } else {
                     Main.type("Health is full.", 10);
                 }
-
+            break;
             case ("bone"):
                 if (Player.position == Leatherface.leatherfacePos) {
-                    Leatherface.isStunned = true;
+                    Leatherface.stun(30000);
                     Main.type(Content.leatherfaceStun, 10);
                 } else {
                     Main.type(getUse(), 10);
                 }
+            break;
         }
     }
 
