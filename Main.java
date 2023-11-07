@@ -53,7 +53,8 @@ class Main {
 
         while (true) {
             // print context for current decision
-
+            leatherface.checkStun();
+            leatherface.move();
             type("\nWhat would you like to do?\n\n", 10);
             String[] choice = getInput();
             switch (choice[0].toLowerCase()) {

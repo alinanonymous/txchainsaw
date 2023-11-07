@@ -10,24 +10,28 @@ public class Leatherface {
     public void stun(int stunLength) {
         unstun = Main.getTime() + stunLength;
         this.isStunned = true;
+        System.out.println("Leatherface stunned");
     }
 
     public boolean checkStun() {
         if (this.isStunned == true) {
-            if (System.currentTimeMillis() <= unstun) {
+            if (Main.getTime() <= unstun) {
                 this.isStunned = false;
+                System.out.println("Leatherface unstunned");
             }
         }
         return isStunned;
     }
 
     public void move() {
-        int direction = (int)(Math.random() * 4);
-        if (leatherfacePos.side[direction] != null) {
-            leatherfacePos.side[direction].enter(this);
-        } else {
-            
+        if (!checkStun()) {
+            int direction = (int)(Math.random() * 4);
+            if (leatherfacePos.side[direction] != null) {
+                System.out.println("Leatherface moved");
+                leatherfacePos.side[direction].enter(this);
+            } else {
+                this.stun(5000);
+            }
         }
     }
-
 }
