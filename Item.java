@@ -19,7 +19,7 @@ public class Item {
         return use;
     }
 
-    public void use(Item item) {
+    public void use(Item item, Leatherface l) {
         switch (item.name) {
 
             case ("health"):
@@ -35,7 +35,7 @@ public class Item {
 
             case ("bone"):
                 if (Player.position == Leatherface.leatherfacePos) {
-                    Leatherface.isStunned = true;
+                    l.stun(30000);
                     Main.type(Content.leatherfaceStun, 10);
                 } else {
                     Main.type(getUse(), 10);

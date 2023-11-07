@@ -38,11 +38,11 @@ public class Player {
         }
     }
 
-    public void useItem(Item item) {
+    public void useItem(Item item, Leatherface l) {
 
         for (int i = 0; i < itemCount; i++) {
             if (item == inventory[i]) {
-                item.use(item);
+                item.use(item, l);
                 itemCount--;
                 break;
             } else {

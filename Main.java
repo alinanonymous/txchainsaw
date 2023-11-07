@@ -34,10 +34,12 @@ class Main {
         Room r1 = new Room();
         r1.setDesc("test\n");
         r1.setDesc2("test2\n");
+        Leatherface leatherface = new Leatherface();
+        leatherface.setLeatherfaceLoc(spawn);
 
-        spawn.addItem(health);
+        spawn.addItem(bone);
         spawn.setSide(Enum.Direction.NORTH, r1);
-        r1.addItem(bone);
+        r1.addItem(health);
         r1.setSide(Enum.Direction.SOUTH, spawn);
         Rose.setLoc(spawn);
         spawn.beenEntered = true;
@@ -77,11 +79,11 @@ class Main {
                     switch (choice[1]) {
                         case "bone":
                         case "shard":
-                            Rose.useItem(bone);
+                            Rose.useItem(bone, leatherface);
                             break;
                         case "health":
                         case "bandage":
-                            Rose.useItem(health);
+                            Rose.useItem(health, leatherface);
                             break;
                     }
                     break;
