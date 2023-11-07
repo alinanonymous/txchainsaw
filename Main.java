@@ -4,6 +4,10 @@ class Main {
     public static String context;
     public static Scanner input = new Scanner(System.in);
     public static Player Rose = new Player();
+    public static final Enum.Direction NORTH = Enum.Direction.NORTH;
+    public static final Enum.Direction SOUTH = Enum.Direction.SOUTH;
+    public static final Enum.Direction EAST = Enum.Direction.EAST;
+    public static final Enum.Direction WEST = Enum.Direction.WEST;
 
     public static void type(String text, int speed) {
 
@@ -31,16 +35,117 @@ class Main {
         spawn.setDesc2(Content.start2);
         spawn.roomThings.add(0, "hat");
         spawn.thingDescs.add(0, "It's a hat. You pick it up and place it back down.");
-        Room r1 = new Room();
-        r1.setDesc("test\n");
-        r1.setDesc2("test2\n");
+        Room coldCorridor = new Room();
+        coldCorridor.setDesc("test\n");
+        coldCorridor.setDesc2("test2\n");
+        Room coldRoom = new Room();
+        coldRoom.setDesc("It cold in here brrr\n");
+        coldRoom.setDesc2("brrr still cold\n");
+        Room lair = new Room();
+        lair.setDesc("its very red here\n");
+        lair.setDesc2("there used to be a chainsaw murderer here\n");
+        Room lairCorridor = new Room();
+        lairCorridor.setDesc("wow lair corridor");
+        lairCorridor.setDesc2("corridor of the lair");
+        Room storage = new Room();
+        storage.setDesc("lotsa boxes here\n");
+        storage.setDesc2("storage\n");
+        Room westTunnels = new Room();
+        westTunnels.setDesc("Long tunnel on the West");
+        westTunnels.setDesc2("big tunnel big big tunnel\n");
+        Room boilerRoom = new Room();
+        boilerRoom.setDesc("boiling boiling\n");
+        boilerRoom.setDesc2("its the boiler room\n");
+        Room northTunnels = new Room();
+        northTunnels.setDesc("tunnels at the north\n");
+        northTunnels.setDesc2("tunnels up north bro\n");
+        Room bedroom = new Room();
+        bedroom.setDesc("its the bedroom\n");
+        bedroom.setDesc2("honk shoo\n");
+        Room kennel = new Room();
+        kennel.setDesc("kennel\n");
+        kennel.setDesc2("kennel room yahoo\n");
+        Room northCell = new Room();
+        northCell.setDesc("It's like the south cell but north!\n");
+        northCell.setDesc2("Yup! still north cell\n");
+        Room bloodBathroom = new Room();
+        bloodBathroom.setDesc("blood bath room? what\n");
+        bloodBathroom.setDesc2("you need a bathroom for blood?\n");
+        Room eastTunnels = new Room();
+        eastTunnels.setDesc("east tunnels\n");
+        eastTunnels.setDesc2("mmmhmm east tunnel\n");
+        Room rearBasement = new Room();
+        rearBasement.setDesc("butt basement lol\n");
+        rearBasement.setDesc2("rear basement");
+        Room sideGardenTunnels = new Room();
+        sideGardenTunnels.setDesc("side garden tunnels");
+        sideGardenTunnels.setDesc2(context);
+        Room fuseboxTunnel = new Room();
+        fuseboxTunnel.setDesc("tunnel with the basement exit");
+        fuseboxTunnel.setDesc2("fusebox tunnel");
         Leatherface leatherface = new Leatherface();
         leatherface.setLeatherfaceLoc(spawn);
 
         spawn.addItem(bone);
-        spawn.setSide(Enum.Direction.NORTH, r1);
-        r1.addItem(health);
-        r1.setSide(Enum.Direction.SOUTH, spawn);
+        spawn.setSide(NORTH, coldCorridor);
+        spawn.setSide(WEST, westTunnels);
+        coldCorridor.addItem(health);
+        coldCorridor.setSide(NORTH, coldRoom);
+        coldCorridor.setSide(SOUTH, spawn);
+        coldCorridor.setSide(EAST, storage);
+        coldCorridor.setSide(WEST, westTunnels);
+        coldRoom.setSide(NORTH, lair);
+        coldRoom.setSide(SOUTH, coldCorridor);
+        coldRoom.setSide(EAST, storage);
+        lair.setSide(NORTH, lairCorridor);
+        lair.setSide(SOUTH, coldRoom);
+        lair.setSide(EAST, rearBasement);
+        lair.setSide(WEST, boilerRoom);
+        lairCorridor.setSide(NORTH, northCell);
+        lairCorridor.setSide(SOUTH, lair);
+        lairCorridor.setSide(EAST, bloodBathroom);
+        lairCorridor.setSide(WEST, bedroom);
+        storage.setSide(NORTH, rearBasement);
+        storage.setSide(SOUTH, sideGardenTunnels);
+        storage.setSide(EAST, fuseboxTunnel);
+        storage.setSide(WEST, coldRoom);
+        westTunnels.setSide(NORTH, boilerRoom);
+        westTunnels.setSide(SOUTH, spawn);
+        westTunnels.setSide(EAST, coldCorridor);
+        boilerRoom.setSide(NORTH, northTunnels);
+        boilerRoom.setSide(SOUTH, westTunnels);
+        boilerRoom.setSide(EAST, bedroom);
+        northTunnels.setSide(NORTH, northCell);
+        northTunnels.setSide(SOUTH, kennel);
+        northTunnels.setSide(EAST, bedroom);
+        northTunnels.setSide(WEST, boilerRoom);
+        bedroom.setSide(NORTH, northTunnels);
+        bedroom.setSide(SOUTH, lairCorridor);
+        bedroom.setSide(EAST, kennel);
+        bedroom.setSide(WEST, boilerRoom);
+        kennel.setSide(NORTH, northTunnels);
+        kennel.setSide(EAST, northCell);
+        kennel.setSide(WEST, bedroom);
+        kennel.setSide(SOUTH, lairCorridor);
+        northCell.setSide(NORTH, northTunnels);
+        northCell.setSide(SOUTH, bloodBathroom);
+        northCell.setSide(EAST, bloodBathroom);
+        northCell.setSide(WEST, kennel);
+        bloodBathroom.setSide(NORTH, eastTunnels);
+        bloodBathroom.setSide(SOUTH, rearBasement);
+        bloodBathroom.setSide(WEST, lairCorridor);
+        eastTunnels.setSide(NORTH, bloodBathroom);
+        eastTunnels.setSide(SOUTH, fuseboxTunnel);
+        eastTunnels.setSide(EAST, bloodBathroom);
+        rearBasement.setSide(NORTH, bloodBathroom);
+        rearBasement.setSide(SOUTH, storage);
+        rearBasement.setSide(EAST, eastTunnels);
+        rearBasement.setSide(WEST, lair);
+        sideGardenTunnels.setSide(NORTH, storage);
+        sideGardenTunnels.setSide(WEST, coldCorridor);
+        fuseboxTunnel.setSide(NORTH, eastTunnels);
+        fuseboxTunnel.setSide(WEST, storage);
+
         Rose.setLoc(spawn);
         spawn.beenEntered = true;
         
@@ -112,22 +217,22 @@ class Main {
             case ("n"):
             case ("north"):
                 type("Moving North.\n\n", 10);
-                Rose.go(Enum.Direction.NORTH);
+                Rose.go(NORTH);
                 break;
             case ("e"):
             case ("east"):
                 type("Moving East.\n\n", 10);
-                Rose.go(Enum.Direction.EAST);
+                Rose.go(EAST);
                 break;
             case ("s"):
             case ("south"):
                 type("Moving South.\n\n", 10);
-                Rose.go(Enum.Direction.SOUTH);
+                Rose.go(SOUTH);
                 break;
             case ("w"):
             case ("west"):
                 type("Moving West.\n\n", 10);
-                Rose.go(Enum.Direction.WEST);
+                Rose.go(WEST);
                 break;
         }
     }
