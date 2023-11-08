@@ -58,7 +58,7 @@ public class Content {
             Your broken body lands on the cold floor with a thud.
             The impact restores your senses.
 
-            There is a door to your north and a small corridor to the south.
+            There is a door to your north and a small hatch to the west.
                 """;
     public static String start2 = """
             You're in the room that you awoke in.
