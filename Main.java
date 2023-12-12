@@ -202,6 +202,7 @@ class Main {
                     } catch (Exception e) {}
                     break;
             }
+            System.out.println(leatherface.isStunned);
 
             // print list of options for current decision
 
@@ -240,6 +241,9 @@ class Main {
     public static String[] getInput() {
         String userIn = input.nextLine();
         String[] split = userIn.split(" ", 2);
+        if (split.length != 1 && split[1].equals(null)) {
+            split[1].equals(" ");
+        }
         return split;
     }
 
