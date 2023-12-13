@@ -30,7 +30,7 @@ public class Leatherface {
                 System.out.println("Leatherface moved");
                 leatherfacePos.side[direction].enter(this);
             } else {
-                this.stun(5000);
+                this.stun(15000);
             }
         }
     }
