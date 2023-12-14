@@ -2,6 +2,7 @@ public class Leatherface {
     public static Room leatherfacePos;
     public boolean isStunned = false;
     public long unstun = 0;
+    public int leatherfaceMoves = 0;
 
     public void setLeatherfaceLoc(Room room) {
         leatherfacePos = room;
@@ -24,11 +25,13 @@ public class Leatherface {
     }
 
     public void move() {
-        if (!checkStun()) {
+        if (!checkStun() && !(Player.position == leatherfacePos)) {
             int direction = (int)(Math.random() * 4);
             if (leatherfacePos.side[direction] != null) {
-                System.out.println("Leatherface moved");
+                System.out.println("Leatherface moved " + leatherfacePos.name);
+                ++leatherfaceMoves;
                 leatherfacePos.side[direction].enter(this);
+            } else if (!(Player.position == leatherfacePos)) {
             } else {
                 this.stun(15000);
             }

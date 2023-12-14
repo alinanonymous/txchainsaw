@@ -69,7 +69,9 @@ public class Content {
     public static String coldDesc = """
             You stumble into a cramped corridor.
                 """;
-
+    public static String leatherfaceMove = """
+            You hear the rumbling of a chainsaw. Leatherface has moved.
+                """;
     public static String leatherfaceStun = """
             \u001b[38;5;196mWith the sharp stinging noise of pierced flesh, the bone shard plunges into
             his neck.\u001b[0m The man shrieks. It is a horrible and inhuman wail, as if an

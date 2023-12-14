@@ -2,13 +2,19 @@ import java.util.*;
 
 public class Room {
 
+    public String name;
     public String desc;
     public String desc2;
+    public String leatherfaceDesc;
     public boolean beenEntered = false;
     public ArrayList<Item> roomItems = new ArrayList<Item>();
     public ArrayList<String> roomThings = new ArrayList<String>();
     public ArrayList<String> thingDescs = new ArrayList<String>();
     public Room[] side = new Room[4];
+
+    Room(String name) {
+        this.name = name;
+    }
 
     public void setDesc(String description) {
         desc = description;
@@ -47,13 +53,14 @@ public class Room {
     }
 
     public void enter(Player p) {
-        p.setLoc(this); // i think this maybe works??
+        p.setLoc(this);
         if (beenEntered == false) {
             Main.type(desc, 25);
             beenEntered = true;
         } else {
             Main.type(desc2, 10);
         }
+        
     }
 
     public void enter(Leatherface l) {

@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Player {
     public static int health = 100;
     public static Room position;
