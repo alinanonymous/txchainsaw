@@ -231,6 +231,11 @@ class Main {
                 lMoveOnce = true;
             }
 
+            if (Rose.health <= 0) {
+                type("\nGAME OVER", 10);
+                alive = false;
+            }
+
             // print list of options for current decision
 
             // read user input

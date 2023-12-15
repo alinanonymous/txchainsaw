@@ -28,7 +28,7 @@ public class Leatherface {
         if (!checkStun() && !(Player.position == leatherfacePos)) {
             int direction = (int)(Math.random() * 4);
             if (leatherfacePos.side[direction] != null) {
-                System.out.println("Leatherface moved " + leatherfacePos.name);
+                System.out.println("Leatherface moved " + leatherfacePos.side[direction].name);
                 ++leatherfaceMoves;
                 leatherfacePos.side[direction].enter(this);
             } else if (!(Player.position == leatherfacePos)) {
