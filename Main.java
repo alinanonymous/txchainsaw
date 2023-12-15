@@ -157,6 +157,7 @@ class Main {
 
         type(Content.start, 1);
         boolean alive = true;
+        Rose.setBandageTime();
 
         while (alive) {
             // print context for current decision
@@ -210,7 +211,7 @@ class Main {
                 String[] choice = getInput();
                 switch(choice[0]) {
                     case "go":
-                        if ((int)Math.random() * 10 == 1) {
+                        if ((int)Math.random() == 1) {
                             move(choice);
                         } else {
                             type("Ouch!", 1);
@@ -231,10 +232,7 @@ class Main {
                 lMoveOnce = true;
             }
 
-            if (Rose.health <= 0) {
-                type("\nGAME OVER", 10);
-                alive = false;
-            }
+            alive = tryToDie(Rose) ? false : true;
 
             // print list of options for current decision
 
@@ -244,6 +242,14 @@ class Main {
 
         }
     }
+
+    public static boolean tryToDie(Player p) {
+        if (p.bandageTime <= getTime() || p.health <= 0) {
+            type("\nYou have just been chainsaw massacred.", 20);
+            return true;
+        }
+        return false;
+    } 
 
     public static void move(String[] choice) {
         switch (choice[1].toLowerCase()) {

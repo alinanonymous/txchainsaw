@@ -3,6 +3,11 @@ public class Player {
     public static Room position;
     public Item[] inventory = new Item[2];
     public int itemCount = 0;
+    public long bandageTime = 0;
+
+    public void setBandageTime() {
+        bandageTime = Main.getTime() + 300000;
+    }
 
     public void setLoc(Room room) {
         position = room;
