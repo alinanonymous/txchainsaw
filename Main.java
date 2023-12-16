@@ -221,8 +221,10 @@ class Main {
                     case "fight":
                         break;
                     default:
-                        type("GAME OVER", 1);
-                        alive = false;
+                        if ((int)Math.random() == 1) {
+                            Rose.health = 0;
+                        }
+                        tryToDie(Rose);
                         break;
                 }
             }
