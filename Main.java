@@ -211,7 +211,7 @@ class Main {
                 String[] choice = getInput();
                 switch(choice[0]) {
                     case "go":
-                        if ((int)Math.random() == 1) {
+                        if ((int)Math.random() * 4 != 1) {
                             move(choice);
                         } else {
                             type("Ouch!", 1);
@@ -219,10 +219,10 @@ class Main {
                         }
                         break;
                     case "fight":
+                        Rose.useItem(bone, leatherface);
                         break;
                     default:
-                        type("GAME OVER", 1);
-                        alive = false;
+                        Rose.health = 0;
                         break;
                 }
             }
